@@ -12,9 +12,16 @@ const App = () =>  (
       </div>
     </div>
 
-    <div className={`bg-emerald-50  `}>
+    <div className={`bg-emerald-50 pb-60 `}>
       <div className={``}>
         <Hero />
+        
+      </div>
+
+    </div>
+    <div className={`bg-emerald-50  h-[600]`}>
+      <div className={``}>
+        
         
       </div>
 
