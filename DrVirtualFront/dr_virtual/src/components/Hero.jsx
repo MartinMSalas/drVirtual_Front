@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import GetStarted from './GetStarted'
 import Button from '../components/Button'
 import { close, logo,logoV, menu} from '../assets';
+import { useScrollBy } from 'react-use-window-scroll';
 
 const Hero = () => {
 
@@ -14,6 +15,7 @@ const Hero = () => {
   const [showGenerarOrdenOsepFisio, setShowGenerarOrdenOsepFisio] = useState(false)
   const [showApiMeli, setShowApiMeli] = useState(false)
   const [clicked, setClicked] = useState(false);
+  const scrollBy = useScrollBy();
   function topButtonClick(){
      window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
      setShowPrescripcion(false)
@@ -30,6 +32,7 @@ const Hero = () => {
     setShowGenerarOrdenOsepFisio(false)
   }
   function buttonRecetasClick() {
+   
     setClicked(true);
 
     setShowPrescripcion(false)
@@ -46,7 +49,7 @@ const Hero = () => {
       setShowObraSocial(false)
     }
     
-    
+    scrollBy({ top: 200, left: 0, behavior: "smooth" })
     console.log(showRecetas)
   }
   function buttonPrescripcionClick() {
@@ -59,6 +62,7 @@ const Hero = () => {
     setShowFormularioOsepFisio(false)
     setShowGenerarOrdenOsepFisio(false)
     console.log(showPrescripcion)
+    scrollBy({ top: 200, left: 0, behavior: "smooth" })
   }
   function buttonObraSocialOsepClick() {
 
@@ -69,30 +73,39 @@ const Hero = () => {
       setShowFormularioOsep(false)
 
     }
+    scrollBy({ top: 200, left: 0, behavior: "smooth" })
   }
   function buttonGenerarRecetaOsepClick() {
-    setShowApiMeli(preShowApiMeli => !preShowApiMeli)
 
+    setShowApiMeli(preShowApiMeli => !preShowApiMeli)
+    
+    scrollBy({ top: 200, left: 0, behavior: "smooth" })
   }
 
   function buttonFisioterapiaClick() {
     setShowObraSocialFisio(preShowObraSocialFisio => !preShowObraSocialFisio)
+    scrollBy({ top: 200, left: 0, behavior: "smooth" })
 
   }
   function buttonObraSocialOsepFisioClick(){
     setShowFormularioOsepFisio(preShowFormularioOsepFisio => !preShowFormularioOsepFisio)
+    scrollBy({ top: 200, left: 0, behavior: "smooth" })
   }
   function buttonOsepFisio1SessionClick(){
     setShowGenerarOrdenOsepFisio(preShowGenerarOrdenOsepFisio => !preShowGenerarOrdenOsepFisio)
+    scrollBy({ top: 200, left: 0, behavior: "smooth" })
   }
   function buttonOsepFisio5SessionClick(){
     setShowGenerarOrdenOsepFisio(preShowGenerarOrdenOsepFisio => !preShowGenerarOrdenOsepFisio)
+    scrollBy({ top: 200, left: 0, behavior: "smooth" })
   }
   function buttonOsepFisio10SessionClick(){
     setShowGenerarOrdenOsepFisio(preShowGenerarOrdenOsepFisio => !preShowGenerarOrdenOsepFisio)
+    scrollBy({ top: 200, left: 0, behavior: "smooth" })
   }
   function buttonGenerarRecetaOsepFisioClick() {
     setShowApiMeli(preShowApiMeli => !preShowApiMeli)
+    scrollBy({ top: 200, left: 0, behavior: "smooth" })
   }
   return (
     
@@ -434,11 +447,11 @@ const Hero = () => {
                 </div>
           </div>
           <div>
-            <div className="flex justify-evenly py-5   ">
+            <div className="flex justify-evenly py-5  pt-1  ">
               <img src={logoV } alt="logo" className="w-[64px] h-[64px] cursor-pointer" onClick={topButtonClick} />        
             </div>
             <div>
-              <h2 className="text-center text-m font-bold pt-1 text-rose-800 w" >
+              <h2 className="text-center text-m font-bold pb-8 pt-1 text-rose-800 w" >
                 Desea generar otra receta ? Presione para ir al inicio
               </h2>
             </div>
