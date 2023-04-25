@@ -1,17 +1,25 @@
 import React, {useState} from 'react'
 import GetStarted from './GetStarted'
 import Button from '../components/Button'
+import { close, logo,logoV, menu} from '../assets';
 
 const Hero = () => {
 
   const [showRecetas, setShowRecetas] = useState(false)
   const [showPrescripcion, setShowPrescripcion] = useState(false)
   const [showObraSocial, setShowObraSocial] = useState(false)
-  const [showFormularioOsep, setShowFormularioOsep] = useState(true)
+  const [showObraSocialFisio, setShowObraSocialFisio] = useState(false)
+  const [showFormularioOsep, setShowFormularioOsep] = useState(false)
+  const [showFormularioOsepFisio, setShowFormularioOsepFisio] = useState(false)
+  const [showGenerarOrdenOsepFisio, setShowGenerarOrdenOsepFisio] = useState(false)
+  const [showApiMeli, setShowApiMeli] = useState(false)
 
   function buttonRecetasClick() {
     setShowPrescripcion(false)
-    
+    setShowObraSocialFisio(false)
+    setShowFormularioOsepFisio(false)
+    setShowGenerarOrdenOsepFisio(false)
+    setShowApiMeli(false)
     console.log(showRecetas)
     if(!showRecetas){
       setShowRecetas(true)
@@ -28,9 +36,47 @@ const Hero = () => {
     setShowPrescripcion(preShowPrescripcion => !preShowPrescripcion)
     setShowRecetas(false)
     setShowObraSocial(false)
+    setShowFormularioOsep(false)
+    setShowApiMeli(false)
+    setShowObraSocialFisio(false)
+    setShowFormularioOsepFisio(false)
+    setShowGenerarOrdenOsepFisio(false)
     console.log(showPrescripcion)
   }
+  function buttonObraSocialOsepClick() {
 
+    if(!showFormularioOsep){
+      setShowFormularioOsep(true)
+
+    }else{
+      setShowFormularioOsep(false)
+
+    }
+  }
+  function buttonGenerarRecetaOsepClick() {
+    setShowApiMeli(preShowApiMeli => !preShowApiMeli)
+
+  }
+
+  function buttonFisioterapiaClick() {
+    setShowObraSocialFisio(preShowObraSocialFisio => !preShowObraSocialFisio)
+
+  }
+  function buttonObraSocialOsepFisioClick(){
+    setShowFormularioOsepFisio(preShowFormularioOsepFisio => !preShowFormularioOsepFisio)
+  }
+  function buttonOsepFisio1SessionClick(){
+    setShowGenerarOrdenOsepFisio(preShowGenerarOrdenOsepFisio => !preShowGenerarOrdenOsepFisio)
+  }
+  function buttonOsepFisio5SessionClick(){
+    setShowGenerarOrdenOsepFisio(preShowGenerarOrdenOsepFisio => !preShowGenerarOrdenOsepFisio)
+  }
+  function buttonOsepFisio10SessionClick(){
+    setShowGenerarOrdenOsepFisio(preShowGenerarOrdenOsepFisio => !preShowGenerarOrdenOsepFisio)
+  }
+  function buttonGenerarRecetaOsepFisioClick() {
+    setShowApiMeli(preShowApiMeli => !preShowApiMeli)
+  }
   return (
     
     <div className=' w-full  '>
@@ -77,7 +123,7 @@ const Hero = () => {
             <div className=' flex justify-around py-5 '>
               <div className="relative  w-[160px] h-12 group">
                 <div className="absolute static transition-all duration-500 inset-0 bg-pink-100 rounded-lg blur opacity-30 rounded w-full group-hover:duration-500 group-hover:opacity-70 group-hover:bg-pink-600 animate-pulse"></div>
-                <button className="text-xs relative transition-all duration-500 bg-blue-400  group-hover:text-red-700 group-hover:duration-500 group-hover:bg-blue-500 group-hover:rounded-md w-full text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded  ">
+                <button onClick={buttonFisioterapiaClick} className="text-xs relative transition-all duration-500 bg-blue-400  group-hover:text-red-700 group-hover:duration-500 group-hover:bg-blue-500 group-hover:rounded-md w-full text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded  ">
                   Fisioterapia y Kinesioterapia
                 </button>
               </div>
@@ -127,28 +173,27 @@ const Hero = () => {
             <div className=' flex justify-around py-5 '>
               <div className="relative  w-[160px] h-12 group">
                 <div className="absolute static transition-all duration-500 inset-0 bg-pink-100 rounded-lg blur opacity-30 rounded w-full group-hover:duration-500 group-hover:opacity-70 group-hover:bg-pink-600 animate-pulse"></div>
-                <button className=" h-12  text-xs relative transition-all duration-500 bg-blue-400  group-hover:text-red-700 group-hover:duration-500 group-hover:bg-blue-500 group-hover:rounded-md w-full text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded  ">
-                  PAMI
+                <button onClick={buttonObraSocialOsepClick} className=" h-12  text-xs relative transition-all duration-500 bg-blue-400  group-hover:text-red-700 group-hover:duration-500 group-hover:bg-blue-500 group-hover:rounded-md w-full text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded  ">
+                  OSEP
                 </button>
               </div>
               <div className="relative  w-[160px] h-12 group">
                 <div className="absolute static transition-all duration-500 inset-0 bg-pink-100 rounded-lg blur opacity-30 rounded w-full  group-hover:duration-500 group-hover:opacity-70 group-hover:bg-pink-600 animate-pulse"></div>
-                <button className=" h-12  text-xs relative transition-all duration-500 bg-blue-400  group-hover:text-red-700 group-hover:duration-500 group-hover:bg-blue-500 group-hover:rounded-md w-full text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded  ">
-                    OSECAT
-                    
+                <button onClick={buttonObraSocialOsepClick} className=" h-12  text-xs relative transition-all duration-500 bg-blue-400  group-hover:text-red-700 group-hover:duration-500 group-hover:bg-blue-500 group-hover:rounded-md w-full text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded  ">
+                    OSECAT                    
                 </button>
               </div>     
             </div>
             <div className=' flex justify-around py-5 '>
               <div className="relative  w-[160px] group">
                 <div className="absolute static transition-all duration-500 inset-0 bg-pink-100 rounded-lg blur opacity-30 rounded w-full group-hover:duration-500 group-hover:opacity-70 group-hover:bg-pink-600 animate-pulse"></div>
-                <button className="h-12  text-xs relative transition-all duration-500 bg-blue-400  group-hover:text-red-700 group-hover:duration-500 group-hover:bg-blue-500 group-hover:rounded-md w-full text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded  ">
+                <button onClick={buttonObraSocialOsepClick} className="h-12  text-xs relative transition-all duration-500 bg-blue-400  group-hover:text-red-700 group-hover:duration-500 group-hover:bg-blue-500 group-hover:rounded-md w-full text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded  ">
                   OSEP
                 </button>
               </div>
               <div className="relative  w-[160px] group">
                 <div className="absolute static transition-all duration-500 inset-0 bg-pink-100 rounded-lg blur opacity-30 rounded w-full  group-hover:duration-500 group-hover:opacity-70 group-hover:bg-pink-600 animate-pulse"></div>
-                <button className="h-12  text-xs relative transition-all duration-500 bg-blue-400  group-hover:text-red-700 group-hover:duration-500 group-hover:bg-blue-500 group-hover:rounded-md w-full text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded  ">
+                <button onClick={buttonObraSocialOsepClick} className="h-12  text-xs relative transition-all duration-500 bg-blue-400  group-hover:text-red-700 group-hover:duration-500 group-hover:bg-blue-500 group-hover:rounded-md w-full text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded  ">
                   OSDE
                 </button>
               </div>     
@@ -160,129 +205,223 @@ const Hero = () => {
             
       
       }{
-        showFormularioOsep &&
-        <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
-        <div className="w-full p-6 m-auto bg-emerald-50 rounded-md shadow-xl shadow-rose-600/40 ring-2 ring-indigo-600 lg:max-w-xl">
-            <h1 className="text-3xl font-semibold text-center text-indigo-700 underline  decoration-wavy">
-                Formulario para solicitar receta con Obra Social Osep
-            </h1>
-            <form className="mt-6">
-                <div className="mb-2">
-                    <label
-                        for="email"
-                        className="block text-sm font-semibold text-gray-800"
-                    >
-                        Nombre y apellido:
-                    </label>
-                    <input
-                        type="email"
-                        className="block w-full px-4 py-2 mt-2 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
-                    />
-                </div>
-                <div className="mb-2">
-                    <label
-                        for="email"
-                        className="block text-sm font-semibold text-gray-800"
-                    >
-                        DNI:
-                    </label>
-                    <input
-                        type="email"
-                        className="block w-full px-4 py-2 mt-2 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
-                    />
-                </div>
-                <div className="mb-2">
-                    <label
-                        for="email"
-                        className="block text-sm font-semibold text-gray-800"
-                    >
-                        Número de carnet:
-                    </label>
-                    <input
-                        type="email"
-                        className="block w-full px-4 py-2 mt-2 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
-                    />
-                </div>
-                <div className="mb-2">
-                    <label
-                        for="password"
-                        className="block text-sm font-semibold text-gray-800"
-                    >
-                        Fecha de nacimiento(dd/mm/aaaa):
-                    </label>
-                    <input
-                        type="password"
-                        className="block w-full px-4 py-2 mt-2 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
-                    />
-                </div>
-                <div className="mb-2">
-                    <label
-                        for="password"
-                        className="block text-sm font-semibold text-gray-800"
-                    >
-                        Fecha de nacimiento(dd/mm/aaaa):
-                    </label>
-                    <input
-                        type="password"
-                        className="block w-full px-4 py-2 mt-2 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
-                    />
-                </div>
-                <div className="mb-2">
-                    <label
-                        for="password"
-                        className="block text-sm font-semibold text-gray-800"
-                    >
-                        Fecha de nacimiento(dd/mm/aaaa):
-                    </label>
-                    <input
-                        type="password"
-                        className="block w-full px-4 py-2 mt-2 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
-                    />
-                </div>
-                <div className="mb-2">
-                    <label
-                        for="password"
-                        className="block text-sm font-semibold text-gray-800"
-                    >
-                        Fecha de nacimiento(dd/mm/aaaa):
-                    </label>
-                    <input
-                        type="password"
-                        className="block w-full px-4 py-2 mt-2 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
-                    />
-                </div>
-                <div className="mb-2">
-                    <label
-                        for="password"
-                        className="block text-sm font-semibold text-gray-800"
-                    >
-                        Fecha de nacimiento(dd/mm/aaaa):
-                    </label>
-                    <input
-                        type="password"
-                        className="block w-full px-4 py-2 mt-2 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
-                    />
-                </div>
-                <div className="mt-6">
-                    <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-indigo-700 rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600">
-                        Login
-                    </button>
-                </div>
-                
-            </form>
-
-            <p className="mt-8 text-xs font-light text-center text-gray-700">
-                {" "}
-                Already have an account?{" "}
-                <a
-                    href="#"
-                    className="font-medium text-indigo-600 hover:underline"
-                >
-                    Sign in
-                </a>
-            </p>
+        showObraSocialFisio &&
+        <div className=' w-full  '>
+        <div>
+          <h2 className="text-center text-m font-bold pt-1 text-rose-800 w" >
+            Por favor, seleccione su obra social
+          </h2>
         </div>
-    </div>
+        <div className=' flex justify-around py-5 '>
+          <div className="relative  w-[160px] h-12 group">
+            <div className="absolute static transition-all duration-500 inset-0 bg-pink-100 rounded-lg blur opacity-30 rounded w-full group-hover:duration-500 group-hover:opacity-70 group-hover:bg-pink-600 animate-pulse"></div>
+            <button onClick={buttonObraSocialOsepFisioClick} className=" h-12  text-xs relative transition-all duration-500 bg-blue-400  group-hover:text-red-700 group-hover:duration-500 group-hover:bg-blue-500 group-hover:rounded-md w-full text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded  ">
+              OSEP
+            </button>
+          </div>
+          <div className="relative  w-[160px] h-12 group">
+            <div className="absolute static transition-all duration-500 inset-0 bg-pink-100 rounded-lg blur opacity-30 rounded w-full  group-hover:duration-500 group-hover:opacity-70 group-hover:bg-pink-600 animate-pulse"></div>
+            <button onClick={buttonObraSocialOsepFisioClick} className=" h-12  text-xs relative transition-all duration-500 bg-blue-400  group-hover:text-red-700 group-hover:duration-500 group-hover:bg-blue-500 group-hover:rounded-md w-full text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded  ">
+                OSECAT                    
+            </button>
+          </div>     
+        </div>
+        <div className=' flex justify-around py-5 '>
+          <div className="relative  w-[160px] group">
+            <div className="absolute static transition-all duration-500 inset-0 bg-pink-100 rounded-lg blur opacity-30 rounded w-full group-hover:duration-500 group-hover:opacity-70 group-hover:bg-pink-600 animate-pulse"></div>
+            <button onClick={buttonObraSocialOsepFisioClick} className="h-12  text-xs relative transition-all duration-500 bg-blue-400  group-hover:text-red-700 group-hover:duration-500 group-hover:bg-blue-500 group-hover:rounded-md w-full text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded  ">
+              OSEP
+            </button>
+          </div>
+          <div className="relative  w-[160px] group">
+            <div className="absolute static transition-all duration-500 inset-0 bg-pink-100 rounded-lg blur opacity-30 rounded w-full  group-hover:duration-500 group-hover:opacity-70 group-hover:bg-pink-600 animate-pulse"></div>
+            <button onClick={buttonObraSocialOsepFisioClick} className="h-12  text-xs relative transition-all duration-500 bg-blue-400  group-hover:text-red-700 group-hover:duration-500 group-hover:bg-blue-500 group-hover:rounded-md w-full text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded  ">
+              OSDE
+            </button>
+          </div>     
+        </div>
+        
+
+
+      </div>
+      }
+      {
+        showFormularioOsep &&
+      <div className='grid grid-cols-1 pt-8'>
+         <div>
+          <h2 className="text-center text-m font-bold pt-1 text-rose-800 w" >
+            Por favor, ingrese los datos del paciente
+          </h2>
+        </div>
+        <form className='px-5 w-full'>
+          <div className="grid md:grid-cols-2 md:gap-6">
+              <div className="relative z-0 w-full mb-6 group">
+                  <input type="text" name="floating_first_name" id="floating_first_name" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:dark:text-red-700 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                  <label hmtlFor="floating_first_name" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombre y Apellido</label>
+              </div>
+              <div className="relative z-0 w-full mb-6 group">
+                  <input type="text" name="floating_last_name" id="floating_last_name" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:dark:text-red-700 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                  <label hmtlFor="floating_last_name" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Apellido</label>
+              </div>
+          </div>
+          <div className="relative z-0 w-full mb-6 group">
+            <div className="relative z-0 w-full mb-6 group">
+                <input type="email" name="floating_email" id="floating_email" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:dark:text-red-700 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                <label hmtlFor="floating_email" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email</label>
+            </div>
+            <div className="relative z-0 w-full mb-6 group">
+              <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:dark:text-red-700 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+              <label hmtlFor="floating_phone" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Numero Telefonico (123-456-789012)</label>
+          </div>
+          </div>
+          <div className="grid md:grid-cols-2 md:gap-6">
+          
+          <div className="relative z-0 w-full mb-6 group">
+              <input type="text" name="floating_company" id="floating_company" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:dark:text-red-700 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+              <label hmtlFor="floating_company" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Numero de Carnet</label>
+          </div>
+          <div className="relative z-0 w-full mb-6 group">
+              <input type="number" name="floating_company" id="floating_company" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:dark:text-red-700 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+              <label hmtlFor="floating_company" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Fecha de nacimiento(dd/mm/yyyy) </label>
+          </div>
+          </div>
+
+          
+          <div className="grid md:grid-cols-2 md:gap-6">
+          
+            <div className="relative z-0 w-full mb-6 group">
+                <input type="text" name="floating_company" id="floating_company" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:dark:text-red-700 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                <label hmtlFor="floating_company" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Rp1 (Consultar al Doctor)</label>
+            </div>
+            <div className="relative z-0 w-full mb-6 group">
+                <input type="text" name="floating_company" id="floating_company" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:dark:text-red-700 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                <label hmtlFor="floating_company" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Diagnostico</label>
+            </div>
+          </div>
+          <div className="grid md:grid-cols-2 md:gap-6">
+            <div className="relative z-0 w-full mb-6 group">
+                <input type="text" name="floating_company" id="floating_company" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:dark:text-red-700 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                <label hmtlFor="floating_company" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Rp2 (Consultar al Doctor)</label>
+            </div>
+            <div className="relative z-0 w-full mb-6 group">
+                <input type="text" name="floating_company" id="floating_company" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:dark:text-red-700 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                <label hmtlFor="floating_company" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Diagnostico</label>
+            </div>
+          </div>
+        </form>
+        <div className='w-full flex justify-center p-7'>
+          <div className="relative  w-[160px] group">
+                  <div className="absolute static transition-all duration-500 inset-0 bg-pink-100 rounded-lg blur opacity-30 rounded w-full  group-hover:duration-500 group-hover:opacity-70 group-hover:bg-pink-600 animate-pulse"></div>
+                  <button onClick={buttonGenerarRecetaOsepClick} className="h-12  text-xs relative transition-all duration-500 bg-blue-400  group-hover:text-red-700 group-hover:duration-500 group-hover:bg-blue-500 group-hover:rounded-md w-full text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded  ">
+                    Generar receta OSDE
+                  </button>
+                </div>     
+          </div>  
+
+        </div>
+        
+      }{
+        showFormularioOsepFisio &&
+        
+        <div className='grid grid-cols-1 pt-8'>
+                   <div>
+          <h2 className="text-center text-m font-bold pt-1 text-rose-800 w" >
+            Por favor, ingrese los datos del paciente
+          </h2>
+        </div>
+          <form className='px-5 w-full'>
+            <div className="grid md:grid-cols-2 md:gap-6">
+                <div className="relative z-0 w-full mb-6 group">
+                    <input type="text" name="floating_first_name" id="floating_first_name" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:dark:text-red-700 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                    <label hmtlFor="floating_first_name" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombre</label>
+                </div>
+                <div className="relative z-0 w-full mb-6 group">
+                    <input type="text" name="floating_last_name" id="floating_last_name" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:dark:text-red-700 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                    <label hmtlFor="floating_last_name" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Apellido</label>
+                </div>
+            </div>
+              <div className="relative z-0 w-full mb-6 group">
+                <div className="relative z-0 w-full mb-6 group">
+                    <input type="email" name="floating_email" id="floating_email" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:dark:text-red-700 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                    <label hmtlFor="floating_email" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email</label>
+                </div>
+                <div className="relative z-0 w-full mb-6 group">
+                  <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:dark:text-red-700 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                  <label hmtlFor="floating_phone" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Numero Telefonico (123-456-789012)</label>
+              </div>
+            </div>
+            
+  
+            
+            <div className="grid md:grid-cols-2 md:gap-6">
+            
+              <div className="relative z-0 w-full mb-6 group">
+                  <input type="text" name="floating_company" id="floating_company" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:dark:text-red-700 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                  <label hmtlFor="floating_company" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Numero de carnet</label>
+              </div>
+              <div className="relative z-0 w-full mb-6 group">
+                  <input type="text" name="floating_company" id="floating_company" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:dark:text-red-700 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                  <label hmtlFor="floating_company" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Fecha de nacimiento(dd/mm/yyyy)</label>
+              </div>
+            </div>
+           
+          </form>
+          <div className='w-full flex justify-evenly p-7'>
+            <div className="relative  w-20 group">
+                    <div className="absolute static transition-all duration-500 inset-0 bg-pink-100 rounded-lg blur opacity-30 rounded w-full  group-hover:duration-500 group-hover:opacity-70 group-hover:bg-pink-600 animate-pulse"></div>
+                    <button onClick={buttonOsepFisio1SessionClick} className="h-12 w-full  text-xs relative transition-all duration-500 bg-blue-400  group-hover:text-red-700 group-hover:duration-500 group-hover:bg-blue-500 group-hover:rounded-md  text-gray-800 font-semibold py-2  border border-gray-400 rounded  ">
+                      1 sesion
+                    </button>
+            </div>    
+            <div className="relative w-20  group">
+                    <div className="absolute static transition-all duration-500 inset-0 bg-pink-100 rounded-lg blur opacity-30 rounded w-full  group-hover:duration-500 group-hover:opacity-70 group-hover:bg-pink-600 animate-pulse"></div>
+                    <button onClick={buttonOsepFisio5SessionClick} className="h-12  w-full text-xs relative transition-all duration-500 bg-blue-400  group-hover:text-red-700 group-hover:duration-500 group-hover:bg-blue-500 group-hover:rounded-md  text-gray-800 font-semibold py-2  border border-gray-400 rounded  ">
+                      5 Sesiones
+                    </button>
+            </div>  
+            <div className="relative w-20 group">
+                    <div className="absolute static transition-all duration-500 inset-0 bg-pink-100 rounded-lg blur opacity-30 rounded w-full  group-hover:duration-500 group-hover:opacity-70 group-hover:bg-pink-600 animate-pulse"></div>
+                    <button onClick={buttonOsepFisio10SessionClick} className={"h-12 w-full  text-xs relative transition-all duration-500 bg-blue-400  group-hover:text-red-700 group-hover:duration-500 group-hover:bg-blue-500 group-hover:rounded-md  text-gray-800 font-semibold py-2  border border-gray-400 rounded  "}>
+                      10 Sesiones
+                    </button>
+            </div>   
+          </div>{showGenerarOrdenOsepFisio&&
+
+           
+            <div className='w-full flex justify-center p-7'>
+              <div className="relative  w-[160px] group">
+                      <div className="absolute static transition-all duration-500 inset-0 bg-pink-100 rounded-lg blur opacity-30 rounded w-full  group-hover:duration-500 group-hover:opacity-70 group-hover:bg-pink-600 animate-pulse"></div>
+                      <button onClick={buttonGenerarRecetaOsepClick} className="h-12  text-xs relative transition-all duration-500 bg-blue-400  group-hover:text-red-700 group-hover:duration-500 group-hover:bg-blue-500 group-hover:rounded-md w-full text-gray-800 font-semibold py-2 border border-gray-400 rounded  ">
+                        Generar Prescripcion Fisioterapia OSEP
+                      </button>
+              </div>     
+            </div>
+            }   
+  
+        </div>
+      }
+      {
+        showApiMeli &&
+        <div>
+          
+          <div className='w-full flex  h-[300px] bg-amber-300  justify-center'>
+                <div>
+                  <h2 className="text-center text-m pt-28 text-rose-800 w" >
+                    ACA va la api de Mercado Pago
+                  </h2>
+                </div>
+          </div>
+          <div>
+            <div className="sm:hidden flex justify-evenly py-5   ">
+              <img src={logoV } alt="logo" className="w-[64px] h-[64px] cursor-pointer" onClick={() => window.scrollTo({top: 0, left: 0, behavior: 'smooth'})} />        
+            </div>
+            <div>
+              <h2 className="text-center text-m font-bold pt-1 text-rose-800 w" >
+                Desea generar otra receta ? Presione para ir al inicio
+              </h2>
+            </div>
+          </div>
+        </div>
       }
 
 
