@@ -13,7 +13,22 @@ const Hero = () => {
   const [showFormularioOsepFisio, setShowFormularioOsepFisio] = useState(false)
   const [showGenerarOrdenOsepFisio, setShowGenerarOrdenOsepFisio] = useState(false)
   const [showApiMeli, setShowApiMeli] = useState(false)
+  
+  function topButtonClick(){
+     window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
+     setShowPrescripcion(false)
+ 
+ 
 
+    setShowApiMeli(false)
+    setShowRecetas(false)
+    setShowObraSocial(false)
+    setShowFormularioOsep(false)
+
+    setShowObraSocialFisio(false)
+    setShowFormularioOsepFisio(false)
+    setShowGenerarOrdenOsepFisio(false)
+  }
   function buttonRecetasClick() {
     setShowPrescripcion(false)
     setShowObraSocialFisio(false)
@@ -366,6 +381,11 @@ const Hero = () => {
             </div>
            
           </form>
+          <div>
+              <h2 className="text-center text-m font-bold pt-1 text-rose-800 w" >
+                Seleccione la cantidad de sesiones necesarias
+              </h2>
+            </div>
           <div className='w-full flex justify-evenly p-7'>
             <div className="relative  w-20 group">
                     <div className="absolute static transition-all duration-500 inset-0 bg-pink-100 rounded-lg blur opacity-30 rounded w-full  group-hover:duration-500 group-hover:opacity-70 group-hover:bg-pink-600 animate-pulse"></div>
@@ -413,7 +433,7 @@ const Hero = () => {
           </div>
           <div>
             <div className="sm:hidden flex justify-evenly py-5   ">
-              <img src={logoV } alt="logo" className="w-[64px] h-[64px] cursor-pointer" onClick={() => window.scrollTo({top: 0, left: 0, behavior: 'smooth'})} />        
+              <img src={logoV } alt="logo" className="w-[64px] h-[64px] cursor-pointer" onClick={topButtonClick} />        
             </div>
             <div>
               <h2 className="text-center text-m font-bold pt-1 text-rose-800 w" >
