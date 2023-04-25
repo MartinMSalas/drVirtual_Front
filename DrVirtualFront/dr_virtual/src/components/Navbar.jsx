@@ -1,41 +1,29 @@
-import { useState } from "react"
-import { close, logo,logoV, menu} from '../assets'
+import { useState } from "react";
+import { close, logo,logoV, menu} from '../assets';
+import Hero from "./Hero";
 
-import {navLinks} from '../constants'
-import { FaBeer } from 'react-icons/fa';
-import { MdMenuBook } from "react-icons/md";
 
-import { IconContext } from "react-icons";
 
-<IconContext.Provider value={{ color: "blue", className: "global-class-name" }}>
-  <div>
-    <FaFolder />
-  </div>
-</IconContext.Provider>;
+
 
 const Navbar = () => {
-  const [togle, setTogle] = useState(false)
+
   return (
-    <nav className="w-full flex py-6 justify-between items-center navbar">
-      <img src={logo} alt="logo" className="w-[124px] h-[32px]" />
-
-      <ul className="list-none sm:flex hidden justify-end items-center flex-1">
-        {navLinks.map((nav, index) => (
-          <li key={nav.id}
-          className={`font-poppins font-normal cursos-pointer text-[16px] text-zinc-700 ${index === navLinks.length-1 ? 'mr-0' :'mr-10'}`}>
-            <a href={`#${nav.id}` }>
-              {nav.title}</a>
-            <MdMenuBook></MdMenuBook>
-
-          </li>
-        ))}
-      </ul>
-      <div className="sm:hidden flex flex-1 justify-end items-center">
-        <img src={togle ? <FaBeer></FaBeer>
- : <MdMenuBook></MdMenuBook>} alt="menu" className="w-[28px] h-[28px] object-contain" onClick={ () => setTogle( (prev) => !prev)}/>
-        <div className={`${togle ? 'flex' :'hidden'} p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar` }>
+    <nav className="w-full   z-50   navbar w-full  ">
+      <div className="bg-emerald-50 fixed    w-full ">
+        <div className="sm:flex  hidden justify-evenly py-5  ml-[20px]"> 
+          <img src={logo} alt="logo" className="w-[248px] h-[64px]  cursor-pointer " onClick={() => window.scrollTo({top: 0, left: 0, behavior: 'smooth'})}/>
+        </div>
+        <div className="sm:hidden flex justify-evenly py-5   ">
+          <img src={logoV } alt="logo" className="w-[64px] h-[64px] cursor-pointer" onClick={() => window.scrollTo({top: 0, left: 0, behavior: 'smooth'})} />        
         </div>
       </div>
+      <div>
+        <h2 className="text-center text-xs pt-28 text-rose-800 w" >
+          Estamos para ayudarte, selecciona el tipo de consulta que deseas realizar
+        </h2>
+      </div>
+ 
     </nav>
   )
 }

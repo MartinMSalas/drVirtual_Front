@@ -4,23 +4,48 @@ import { Navbar, Hero, Stats, Business, Billing, CardDeal, Testimonials, Clients
 
 
 const App = () =>  (
-  <div className='bg-emerald-50 w-full overflow-hidden'>
-    <div className={`${styles.paddingX} ${styles.flexCenter}`}>
-      <div className={`${styles.boxWidth} `}>
+  <div className='bg-emerald-50 w-full grid '>
+    <div className={` `}>
+      <div className={``}>
+       
         <Navbar />
       </div>
     </div>
 
-    <div className={`bg-primary  ${styles.paddingX} ${styles.flexStart}`}>
-      <div className={`${styles.boxWidth} `}>
+    <div className={`bg-emerald-50  `}>
+      <div className={``}>
         <Hero />
         
       </div>
 
     </div>
 
-    <div className={`bg-primary ${styles.paddingX} ${styles.flexStart}`}>
+    <div className={`bg-emerald-50  `}>
       <div className={`${styles.boxWidth} `}>
+      <Stats />
+        <Business />
+        <Billing />
+        <CardDeal />
+        <Testimonials />
+        <Clients />
+        <CTA />
+        <Footer />
+        <Stats />
+        <Business />
+        <Billing />
+        <CardDeal />
+        <Testimonials />
+        <Clients />
+        <CTA />
+        <Footer />
+        <Stats />
+        <Business />
+        <Billing />
+        <CardDeal />
+        <Testimonials />
+        <Clients />
+        <CTA />
+        <Footer />
         <Stats />
         <Business />
         <Billing />
