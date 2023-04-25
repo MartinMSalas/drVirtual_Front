@@ -19,7 +19,7 @@ const Navbar = () => {
         </div>
       </div>
       <div>
-        <h2 className="text-center text-xs pt-28 text-rose-800 w" >
+        <h2 className="text-center text-m pt-28 text-rose-800 w" >
           Estamos para ayudarte, selecciona el tipo de consulta que deseas realizar
         </h2>
       </div>
