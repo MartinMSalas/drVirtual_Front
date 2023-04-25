@@ -434,7 +434,7 @@ const Hero = () => {
                 </div>
           </div>
           <div>
-            <div className="sm:hidden flex justify-evenly py-5   ">
+            <div className="flex justify-evenly py-5   ">
               <img src={logoV } alt="logo" className="w-[64px] h-[64px] cursor-pointer" onClick={topButtonClick} />        
             </div>
             <div>
