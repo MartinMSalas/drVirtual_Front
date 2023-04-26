@@ -12,7 +12,7 @@ const App = () =>  (
       </div>
     </div>
 
-    <div className={`bg-emerald-50 pb-60 `}>
+    <div className={`bg-emerald-50 pb-96 `}>
       <div className={``}>
         <Hero />
         
