@@ -119,14 +119,19 @@ const Hero = () => {
           <Button clickHandler={buttonRecetasClick} >Recetas</Button>
         </div>
         <div className="relative  w-[160px] group">
-          <div className="absolute static transition-all duration-500 inset-0 bg-pink-100 rounded-lg blur opacity-30 rounded w-full  group-hover:duration-500 group-hover:opacity-70 group-hover:bg-pink-600 animate-pulse"></div>
-          <button onClick={buttonPrescripcionClick} className="h-12 text-xs relative transition-all duration-500 bg-blue-400 group-hover:text-red-700 group-hover:duration-500 group-hover:bg-blue-500 group-hover:rounded-md w-full text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded  ">
+          
+          {/* <div className="absolute static transition-all duration-500 inset-0 bg-pink-100 rounded-lg blur opacity-30 rounded w-full  group-hover:duration-500 group-hover:opacity-70 group-hover:bg-pink-600 animate-pulse"></div> */}
+          {/* <button onClick={buttonPrescripcionClick} className="h-12 text-xs relative transition-all duration-500 bg-blue-400 group-hover:text-red-700 group-hover:duration-500 group-hover:bg-blue-500 group-hover:rounded-md w-full text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded  ">
               Prescripcion
-          </button>
-          </div>     
-        </div>
+          </button> */}
+           <Button clickHandler={buttonPrescripcionClick} >Prescripcion</Button>
+        </div>     
+         
+
+      </div>
       <div className=' flex justify-around py-5 '>
         <div className="relative  w-[160px] group">
+     
           <div className="absolute static transition-all duration-500 inset-0 bg-pink-100 rounded-lg blur opacity-30 rounded w-full group-hover:duration-500 group-hover:opacity-70 group-hover:bg-pink-600 animate-pulse"></div>
           <button className="h-12 text-xs relative transition-all duration-500 bg-blue-400  group-hover:text-red-700 group-hover:duration-500 group-hover:bg-blue-500 group-hover:rounded-md w-full text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded  ">
             Laboratorio
@@ -153,10 +158,7 @@ const Hero = () => {
           <div className=' w-full  '>
             <div className=' flex justify-around py-5 '>
               <div className="relative  w-[160px] h-12 group">
-                <div className="absolute static transition-all duration-500 inset-0 bg-pink-100 rounded-lg blur opacity-30 rounded w-full group-hover:duration-500 group-hover:opacity-70 group-hover:bg-pink-600 animate-pulse"></div>
-                <button onClick={buttonFisioterapiaClick} className="text-xs relative transition-all duration-500 bg-blue-400  group-hover:text-red-700 group-hover:duration-500 group-hover:bg-blue-500 group-hover:rounded-md w-full text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded  ">
-                  Fisioterapia y Kinesioterapia
-                </button>
+                <Button clickHandler={buttonFisioterapiaClick} >Fisioterapia y Kinesioterapia</Button>
               </div>
               <div className="relative  w-[160px] h-12 group">
                 <div className="absolute static transition-all duration-500 inset-0 bg-pink-100 rounded-lg blur opacity-30 rounded w-full  group-hover:duration-500 group-hover:opacity-70 group-hover:bg-pink-600 animate-pulse"></div>
@@ -203,10 +205,7 @@ const Hero = () => {
             </div>
             <div className=' flex justify-around py-5 '>
               <div className="relative  w-[160px] h-12 group">
-                <div className="absolute static transition-all duration-500 inset-0 bg-pink-100 rounded-lg blur opacity-30 rounded w-full group-hover:duration-500 group-hover:opacity-70 group-hover:bg-pink-600 animate-pulse"></div>
-                <button onClick={buttonObraSocialOsepClick} className=" h-12  text-xs relative transition-all duration-500 bg-blue-400  group-hover:text-red-700 group-hover:duration-500 group-hover:bg-blue-500 group-hover:rounded-md w-full text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded  ">
-                  OSEP
-                </button>
+                <Button clickHandler={buttonObraSocialOsepClick} >OSEP</Button>
               </div>
               <div className="relative  w-[160px] h-12 group">
                 <div className="absolute static transition-all duration-500 inset-0 bg-pink-100 rounded-lg blur opacity-30 rounded w-full  group-hover:duration-500 group-hover:opacity-70 group-hover:bg-pink-600 animate-pulse"></div>
@@ -403,33 +402,25 @@ const Hero = () => {
               </h2>
             </div>
           <div className='w-full flex justify-evenly p-7'>
-            <div className="relative  w-20 group">
-                    <div className="absolute static transition-all duration-500 inset-0 bg-pink-100 rounded-lg blur opacity-30 rounded w-full  group-hover:duration-500 group-hover:opacity-70 group-hover:bg-pink-600 animate-pulse"></div>
-                    <button onClick={buttonOsepFisio1SessionClick} className="h-12 w-full  text-xs relative transition-all duration-500 bg-blue-400  group-hover:text-red-700 group-hover:duration-500 group-hover:bg-blue-500 group-hover:rounded-md  text-gray-800 font-semibold py-2  border border-gray-400 rounded  ">
-                      1 sesion
-                    </button>
+            <div className="relative  w-28 group">
+                    <Button clickHandler={buttonOsepFisio1SessionClick}>1 Sesion</Button>
+                    
             </div>    
-            <div className="relative w-20  group">
-                    <div className="absolute static transition-all duration-500 inset-0 bg-pink-100 rounded-lg blur opacity-30 rounded w-full  group-hover:duration-500 group-hover:opacity-70 group-hover:bg-pink-600 animate-pulse"></div>
-                    <button onClick={buttonOsepFisio5SessionClick} className="h-12  w-full text-xs relative transition-all duration-500 bg-blue-400  group-hover:text-red-700 group-hover:duration-500 group-hover:bg-blue-500 group-hover:rounded-md  text-gray-800 font-semibold py-2  border border-gray-400 rounded  ">
-                      5 Sesiones
-                    </button>
+            <div className="relative w-28  group">
+                    <Button clickHandler={buttonOsepFisio5SessionClick}>5 Sesiones</Button>
+                   
             </div>  
-            <div className="relative w-20 group">
-                    <div className="absolute static transition-all duration-500 inset-0 bg-pink-100 rounded-lg blur opacity-30 rounded w-full  group-hover:duration-500 group-hover:opacity-70 group-hover:bg-pink-600 animate-pulse"></div>
-                    <button onClick={buttonOsepFisio10SessionClick} className={"h-12 w-full  text-xs relative transition-all duration-500 bg-blue-400  group-hover:text-red-700 group-hover:duration-500 group-hover:bg-blue-500 group-hover:rounded-md  text-gray-800 font-semibold py-2  border border-gray-400 rounded  "}>
-                      10 Sesiones
-                    </button>
+            <div className="relative w-28 group">
+                    <Button clickHandler={buttonOsepFisio10SessionClick}>10 Sesiones</Button>
+                    
             </div>   
           </div>{showGenerarOrdenOsepFisio&&
 
            
             <div className='w-full flex justify-center p-7'>
               <div className="relative  w-[160px] group">
-                      <div className="absolute static transition-all duration-500 inset-0 bg-pink-100 rounded-lg blur opacity-30 rounded w-full  group-hover:duration-500 group-hover:opacity-70 group-hover:bg-pink-600 animate-pulse"></div>
-                      <button onClick={buttonGenerarRecetaOsepClick} className="h-12  text-xs relative transition-all duration-500 bg-blue-400  group-hover:text-red-700 group-hover:duration-500 group-hover:bg-blue-500 group-hover:rounded-md w-full text-gray-800 font-semibold py-2 border border-gray-400 rounded  ">
-                        Generar Prescripcion Fisioterapia OSEP
-                      </button>
+                      <Button clickHandler={buttonGenerarRecetaOsepClick}>Generar Prescripcion Fisioterapia OSEP</Button>
+                      
               </div>     
             </div>
             }   
