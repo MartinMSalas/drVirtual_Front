@@ -16,27 +16,23 @@ const Hero = () => {
   const [showFormularioOsepFisio, setShowFormularioOsepFisio] = useState(false)
   const [showGenerarOrdenOsepFisio, setShowGenerarOrdenOsepFisio] = useState(false)
   const [showApiMeli, setShowApiMeli] = useState(false)
-  const [clicked, setClicked] = useState(false);
+  const [showFisioSesionNumber, setFisioSesionNumber] = useState(0);
   const scrollBy = useScrollBy();
-  function topButtonClick(){
-     window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
-     setShowPrescripcion(false)
- 
- 
 
+  function topButtonClick(){
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
+
+    setShowPrescripcion(false)
     setShowApiMeli(false)
     setShowRecetas(false)
     setShowObraSocial(false)
     setShowFormularioOsep(false)
-
     setShowObraSocialFisio(false)
     setShowFormularioOsepFisio(false)
     setShowGenerarOrdenOsepFisio(false)
   }
-  function buttonRecetasClick() {
-   
-    setClicked(true);
-
+  function buttonRecetasClick() {   
+    //setClicked(true);
     setShowPrescripcion(false)
     setShowObraSocialFisio(false)
     setShowFormularioOsepFisio(false)
@@ -95,14 +91,20 @@ const Hero = () => {
   }
   function buttonOsepFisio1SessionClick(){
     setShowGenerarOrdenOsepFisio(preShowGenerarOrdenOsepFisio => !preShowGenerarOrdenOsepFisio)
+    setShowApiMeli(false)
+    setFisioSesionNumber(1)
     scrollBy({ top: 200, left: 0, behavior: "smooth" })
   }
   function buttonOsepFisio5SessionClick(){
     setShowGenerarOrdenOsepFisio(preShowGenerarOrdenOsepFisio => !preShowGenerarOrdenOsepFisio)
+    setShowApiMeli(false)
+    setFisioSesionNumber(5)
     scrollBy({ top: 200, left: 0, behavior: "smooth" })
   }
   function buttonOsepFisio10SessionClick(){
     setShowGenerarOrdenOsepFisio(preShowGenerarOrdenOsepFisio => !preShowGenerarOrdenOsepFisio)
+    setShowApiMeli(false)
+    setFisioSesionNumber(10)
     scrollBy({ top: 200, left: 0, behavior: "smooth" })
   }
   function buttonGenerarRecetaOsepFisioClick() {
@@ -221,12 +223,7 @@ const Hero = () => {
                 </button>
               </div>     
             </div>
-            
-
-
           </div>
-            
-      
       }{
         showObraSocialFisio &&
         <div className=' w-full  '>
@@ -263,9 +260,6 @@ const Hero = () => {
             </button>
           </div>     
         </div>
-        
-
-
       </div>
       }
       {
@@ -396,24 +390,22 @@ const Hero = () => {
             </div>
           <div className='w-full flex justify-evenly p-7'>
             <div className="relative  w-28 group">
-                    <Button clickHandler={buttonOsepFisio1SessionClick}>1 Sesion</Button>
-                    
+                    <Button clickHandler={buttonOsepFisio1SessionClick}>1 Sesion</Button>                    
             </div>    
             <div className="relative w-28  group">
-                    <Button clickHandler={buttonOsepFisio5SessionClick}>5 Sesiones</Button>
-                   
+                    <Button clickHandler={buttonOsepFisio5SessionClick}>5 Sesiones</Button>                   
             </div>  
             <div className="relative w-28 group">
-                    <Button clickHandler={buttonOsepFisio10SessionClick}>10 Sesiones</Button>
-                    
+                    <Button clickHandler={buttonOsepFisio10SessionClick}>10 Sesiones</Button>                    
             </div>   
-          </div>{showGenerarOrdenOsepFisio&&
-
-           
+          </div>{showGenerarOrdenOsepFisio&&           
             <div className='w-full flex justify-center p-7'>
-              <div className="relative  w-[160px] group">
-                      <Button clickHandler={buttonGenerarRecetaOsepClick}>Generar Prescripcion Fisioterapia OSEP</Button>
-                      
+              <div className="relative  w-[240px] group">
+                      <Button clickHandler={buttonGenerarRecetaOsepClick}>
+                        <div>Prescripcion Fisioterapia OSEP</div>
+                        <div> {showFisioSesionNumber} {showFisioSesionNumber == 1 ? "Sesion" : "Sesiones"} </div>
+                      </Button>                      
+                          
               </div>     
             </div>
             }   
