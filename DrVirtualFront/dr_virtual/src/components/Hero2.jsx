@@ -29,6 +29,9 @@ const Hero2 = () => {
   
   const [fisioterapiaClick,setFisioterapiaClick] = useState(false)
   const [electrocardiogramaClick,setElectrocardiogramaClick] = useState(false)
+  const [espirometriaClick,setEspirometriaClick] = useState(false)
+  const [ergometriaClick,setErgometriaClick] = useState(false)
+
   // tercer nivel
 
 
@@ -142,12 +145,22 @@ const Hero2 = () => {
     scrollBy({ top: 200, left: 0, behavior: "smooth" })
   }
   function buttonFisioterapiaSecondLevelClick() {
-    setFisioterapiaClick(preFisioteapiaClick => !preFisioteapiaClick)
-    if(!showObraSocial){        
+    setShowFormularioBasico(false)
+    setShowGenerarOrdenOsepFisio(false)
+    setShowApiMeli(false)
+
+
+    setElectrocardiogramaClick(false)
+    setEspirometriaClick(false)
+    setErgometriaClick(false)
+
+    if(!fisioterapiaClick){        
+        setFisioterapiaClick(true)
         setShowObraSocial(true)
         
     }else{
       setShowObraSocial(false)
+      setFisioterapiaClick(false)
       
     } 
 
@@ -155,6 +168,13 @@ const Hero2 = () => {
 
   }
   function buttonElectrocardiogramaSecondLevelClick(){
+    setShowFormularioBasico(false)
+    setShowApiMeli(false)
+
+    setFisioterapiaClick(false)
+    setEspirometriaClick(false)
+    setErgometriaClick(false)
+    
     if(!electrocardiogramaClick){
       setElectrocardiogramaClick(true)
       setShowObraSocial(true)
@@ -165,6 +185,43 @@ const Hero2 = () => {
     }
 
   }
+  function buttonEspirometriaSecondLevelClick(){
+    setShowFormularioBasico(false)
+    setShowApiMeli(false)
+
+    setFisioterapiaClick(false)
+    setElectrocardiogramaClick(false)
+    setErgometriaClick(false) 
+
+    if(!espirometriaClick){
+      setEspirometriaClick(true)
+      setShowObraSocial(true)
+      
+    }else{
+      setEspirometriaClick(false)
+      setShowObraSocial(false)
+    }
+
+  }
+  function buttonErgometriaSecondLevelClick(){
+    setShowFormularioBasico(false)
+    setShowApiMeli(false)
+
+    setFisioterapiaClick(false)
+    setElectrocardiogramaClick(false)
+    setEspirometriaClick(false) 
+
+    if(!ergometriaClick){
+      setEspirometriaClick(true)
+      setShowObraSocial(true)
+      
+    }else{
+      setErgometriaClick(false)
+      setShowObraSocial(false)
+    }
+
+  }
+
 
 
 
@@ -177,10 +234,7 @@ const Hero2 = () => {
   }
 
 
-  function buttonObraSocialOsepFisioClick(){
-    //setShowFormularioOsepFisio(preShowFormularioOsepFisio => !preShowFormularioOsepFisio)
-    scrollBy({ top: 200, left: 0, behavior: "smooth" })
-  }
+ 
   function buttonOsepFisio1SessionClick(){
     setShowGenerarOrdenOsepFisio(preShowGenerarOrdenOsepFisio => !preShowGenerarOrdenOsepFisio)
     setShowApiMeli(false)
@@ -246,18 +300,13 @@ const Hero2 = () => {
                 <Button clickHandler={buttonElectrocardiogramaSecondLevelClick} >Electrocardiograma</Button>
               </div>     
             </div>
+    
             <div className=' flex justify-around py-5 '>
-              <div className="relative  w-[160px] group">
-                <div className="absolute static transition-all duration-500 inset-0 bg-pink-100 rounded-lg blur opacity-30 rounded w-full group-hover:duration-500 group-hover:opacity-70 group-hover:bg-pink-600 animate-pulse"></div>
-                <button className="h-12  text-xs relative transition-all duration-500 bg-blue-400  group-hover:text-red-700 group-hover:duration-500 group-hover:bg-blue-500 group-hover:rounded-md w-full text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded  ">
-                  Espirometria
-                </button>
+              <div className="relative  w-[160px] group">                
+                <Button clickHandler={buttonEspirometriaSecondLevelClick}>Espirometria </Button>
               </div>
               <div className="relative  w-[160px] group">
-                <div className="absolute static transition-all duration-500 inset-0 bg-pink-100 rounded-lg blur opacity-30 rounded w-full  group-hover:duration-500 group-hover:opacity-70 group-hover:bg-pink-600 animate-pulse"></div>
-                <button className="h-12  text-xs relative transition-all duration-500 bg-blue-400  group-hover:text-red-700 group-hover:duration-500 group-hover:bg-blue-500 group-hover:rounded-md w-full text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded  ">
-                  Ergometria
-                </button>
+                <Button clickHandler={buttonErgometriaSecondLevelClick}>Ergometria</Button>
               </div>     
             </div>
             <div className=' flex justify-around py-5 '>
@@ -412,19 +461,36 @@ const Hero2 = () => {
           
           }
           { prescripcionClick && electrocardiogramaClick &&
-             <div className='w-full flex justify-center p-7'>
-             <div className="relative  w-[240px] group">
-                     <Button clickHandler={buttonGenerarRecetaOsepClick}>
-                       <div>Prescripcion Electrocardiograma OSEP</div>
-                       <div>Diagnostico Arritmia</div>
-                     </Button>                      
-                         
-             </div>     
-           </div>
-          
-          
+            <div className='w-full flex justify-center p-7'>
+              <div className="relative  w-[240px] group">
+                  <Button clickHandler={buttonGenerarRecetaOsepClick}>
+                    <div>Prescripcion Electrocardiograma OSEP</div>
+                    <div>Diagnostico Arritmia</div>
+                  </Button>    
+              </div>     
+            </div>
           }
-          {prescripcionClick && showGenerarOrdenOsepFisio&&           
+          { prescripcionClick && espirometriaClick &&
+            <div className='w-full flex justify-center p-7'>
+              <div className="relative  w-[240px] group">
+                  <Button clickHandler={buttonGenerarRecetaOsepClick}>
+                    <div>Prescripcion Espirometria OSEP</div>
+                    <div>Diagnostico Disnea</div>
+                  </Button>    
+              </div>     
+            </div>
+          }
+          { prescripcionClick && ergometriaClick &&
+            <div className='w-full flex justify-center p-7'>
+              <div className="relative  w-[240px] group">
+                  <Button clickHandler={buttonGenerarRecetaOsepClick}>
+                    <div>Prescripcion Ergometria OSEP</div>
+                    <div>Diagnostico Arritmia</div>
+                  </Button>    
+              </div>     
+            </div>
+          }
+          {prescripcionClick && fisioterapiaClick && showGenerarOrdenOsepFisio&&  
             <div className='w-full flex justify-center p-7'>
               <div className="relative  w-[240px] group">
                       <Button clickHandler={buttonGenerarRecetaOsepClick}>
