@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
-import GetStarted from './GetStarted'
+
 import Button from '../components/Button'
 import {Button2} from '../components/Button2'
-import { close, logo,logoV, menu} from '../assets';
+import {logoV} from '../assets';
 import { useScrollBy } from 'react-use-window-scroll';
-
+import {Recetas} from '../components/Recetas'
 
 const Hero2 = () => {
 
@@ -87,12 +87,12 @@ const Hero2 = () => {
  
     if(!recetasClick){
       setRecetasClick(true)
-      setShowObraSocial(true)
+      //setShowObraSocial(true)
       console.log("recetasClick: ",recetasClick)
       console.log("showObraSocial: ",showObraSocial)
     }else{
       setRecetasClick(false)
-      setShowObraSocial(false)
+      //setShowObraSocial(false)
     }
     
     scrollBy({ top: 200, left: 0, behavior: "smooth" })
@@ -288,6 +288,11 @@ const Hero2 = () => {
           </button>
         </div>
       </div>
+      {recetasClick && 
+        <Recetas ></Recetas>
+      }
+
+
 
       
       {prescripcionClick && showPrescripcion &&

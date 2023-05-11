@@ -1,5 +1,5 @@
 import React from "react";
-import button2 from "./css/button2.css"
+import "./css/button2.css"
 export const  Button2 = ({children,clickHandler}) => {
   return (
     <div>

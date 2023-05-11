@@ -1,7 +1,7 @@
 import styles from "./style"
 
 import { Navbar, Hero, Stats, Business, Billing, CardDeal, Testimonials, Clients, CTA, Footer} from "./components"
-import Hero2 from "./components/Hero2"
+import Hero3 from "./components/Hero3"
 
 
 const App = () =>  (
@@ -15,7 +15,7 @@ const App = () =>  (
 
     <div className={`bg-emerald-50 pb-96 h-full`}>
       <div className={``}>
-        <Hero2 />
+        <Hero3 />
         
       </div>
 
