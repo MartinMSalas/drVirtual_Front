@@ -2,6 +2,9 @@ import React from "react"
 import logoV from "../assets/logoVertical.png"
 
 const ApiMeli = (props) => {
+  function toTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
   return (
     <div className=''>
        {alert("Success")}
@@ -15,7 +18,7 @@ const ApiMeli = (props) => {
       </div>
       <div>
         <div className="flex justify-evenly py-5  pt-1  ">
-          <img src={logoV } alt="logo" className="w-[64px] h-[64px] cursor-pointer"  />        
+          <img onClick={toTop} src={logoV } alt="logo" className="w-[64px] h-[64px] cursor-pointer"  />        
         </div>
         <div>
           <h2 className="text-center text-m font-bold pb-8 pt-1 text-rose-800 w" >

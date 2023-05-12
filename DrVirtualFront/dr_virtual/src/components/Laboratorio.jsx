@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import ObraSocial2 from './ObraSocial2'
 import { FormBasico3 } from './FormBasico3';
 import ApiMeli from './ApiMeli';
-export const Recetas=()=> {
+export const Laboratorio=()=> {
 
   const [obraSocialClick, setObraSocialClick] = useState(false);
   const [obraSocialSelected, setObraSocialSelected] = useState(""); //osep, swiss, etc
@@ -35,7 +35,7 @@ export const Recetas=()=> {
   return (
     <>
       <ObraSocial2 clickHandler={clickHandlerObraSocial}></ObraSocial2>
-      {obraSocialClick && (<FormBasico3 formHandler={formHandler} especialidadSelected={"Receta"} obraSocialSelected={obraSocialSelected}></FormBasico3>)}
+      {obraSocialClick && (<FormBasico3 formHandler={formHandler} especialidadSelected={"Laboratorio"} obraSocialSelected={obraSocialSelected}></FormBasico3>)}
       {formSubmited && <ApiMeli></ApiMeli>}
     </>
 

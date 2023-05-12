@@ -1,19 +1,16 @@
 import React, {useState} from 'react'
 
-import Button from '../components/Button'
-import {Button2} from '../components/Button2'
+import Button from './Button'
+import {Button2} from './Button2'
 import {logoV} from '../assets';
 import { useScrollBy } from 'react-use-window-scroll';
 
-import {Recetas} from '../components/Recetas'
-import {Prescripcion} from '../components/Prescripcion'
-import {ImagenesMedicas} from '../components/ImagenesMedicas'
-import { Laboratorio } from './Laboratorio';
-import { Consultas } from './Consultas';
-
+import {Recetas} from './Recetas'
+import {Prescripcion} from './Prescripcion'
+import {ImagenesMedicas} from './ImagenesMedicas'
 import Hero3Menu from './Hero3Menu';
 
-const Hero3 = () => {
+const Hero4 = () => {
 
 
   const scrollBy = useScrollBy();
@@ -22,8 +19,7 @@ const Hero3 = () => {
   const [recetasClick,setRecetasClick] = useState(false)
   const [prescripcionClick,setPrescripcionClick] = useState(false)
   const [imagenesMedicasClick,setImagenesMedicasClick] = useState(false)
-  const [laboratorioClick,setLaboratorioClick] = useState(false)
-  const [consultasClick,setConsultasClick] = useState(false)
+
 
   function topButtonClick(){
     window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
@@ -41,20 +37,12 @@ const Hero3 = () => {
       buttonPrescripcionFirstLevelClick()
     }else if(data==="imagenes"){
       buttonImagenesMedicasFirstLevelClick()
-    }else if(data==="laboratorio"){
-      buttonLaboratorioFirstLevelClick()
     }
-    else if(data==="consultas"){
-      buttonConsultasFirstLevelClick()
-    }
-
-
   }
   function buttonRecetasFirstLevelClick() {   
+
     setPrescripcionClick(false)
     setImagenesMedicasClick(false)
-    setLaboratorioClick(false)
-    setConsultasClick(false)
 
     console.log("recetasClick: ",recetasClick)
      if(!recetasClick){
@@ -67,8 +55,6 @@ const Hero3 = () => {
   function buttonPrescripcionFirstLevelClick() {
     setRecetasClick(false)
     setImagenesMedicasClick(false)
-    setLaboratorioClick(false)
-    setConsultasClick(false)
      
     if(!prescripcionClick){
       setPrescripcionClick(true)      
@@ -81,8 +67,6 @@ const Hero3 = () => {
   function buttonImagenesMedicasFirstLevelClick(){
     setRecetasClick(false)
     setPrescripcionClick(false)
-    setLaboratorioClick(false)
-    setConsultasClick(false)
     if(!imagenesMedicasClick){
       setImagenesMedicasClick(true)
 
@@ -90,31 +74,10 @@ const Hero3 = () => {
       setImagenesMedicasClick(false)
     }
 
-  }
-  function buttonLaboratorioFirstLevelClick(){
-    setRecetasClick(false)
-    setPrescripcionClick(false)
-    setImagenesMedicasClick(false)
-    setConsultasClick(false)
-    if(!laboratorioClick){
-      setLaboratorioClick(true)
-    }else{
-      setLaboratorioClick(false)
-    }
+
 
   }
-  function buttonConsultasFirstLevelClick(){
-    setRecetasClick(false)
-    setPrescripcionClick(false)
-    setImagenesMedicasClick(false)
-    setLaboratorioClick(false)
-    if(!consultasClick){
-      setConsultasClick(true)
-    }else{
-      setConsultasClick(false)
-    }
 
-  }
   // Funciones segundo nivel
 
   return (
@@ -131,12 +94,6 @@ const Hero3 = () => {
       { imagenesMedicasClick &&
         <ImagenesMedicas></ImagenesMedicas>
       }
-      { laboratorioClick &&
-        <Laboratorio></Laboratorio>
-      }
-      { consultasClick &&
-        <Consultas></Consultas>
-      }
     
     </>
     
@@ -147,6 +104,6 @@ const Hero3 = () => {
 
     
   )
-}
 
-export default Hero3
+
+export default Hero4

@@ -5,7 +5,7 @@ export default function FormInterconsultaExtra({formInterconsultaHandler}) {
   const [selectedInterConsulta, setSelectedInterConsulta] = useState();
 
   const handleChange = (e) => {
-    console.log(e.target.value)
+    //console.log(e.target.value)
     setSelectedInterConsulta(e.target.value);
   }
   return (

@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import ObraSocial2 from './ObraSocial2'
-import { FormBasico2 } from './FormBasico2';
+
 import ApiMeli from './ApiMeli';
 import PrescripcionEspecialidades from './PrescripcionEspecialidades';
 import { FormBasico3 } from './FormBasico3';
@@ -22,7 +22,7 @@ export const Prescripcion=()=> {
   const [formFisioExtra,setFormFisioExtra]=useState(false);
   const [formInterconsultaExtra,setFormInterconsultaExtra]=useState(false);
 
-  const [data, setData] = useState({});
+  
 
   function clickHandlerEspecialidades(especialidadName){
     setObraSocialClick(false);
@@ -56,14 +56,14 @@ export const Prescripcion=()=> {
     if (!formSubmited) {
       if(especialidadSelected==="fisioterapia")
       {
-        console.log("estoy en el if fisioterapia")
+        
         setFormFisioExtra(true)
       }else if(especialidadSelected==="interconsultas"){
-        console.log("estoy en el if interconsulta")
+        
         setFormInterconsultaExtra(true)
       }    
       else{
-        console.log("estoy en el if general")
+      
         setFormSubmited(true);
       }
     } else {
@@ -83,7 +83,7 @@ export const Prescripcion=()=> {
   }
   function formInterconsultaHandler(data){
     setInterconsultaExtraData(data);
-    console.log(`se recibio ${data}`)
+    //console.log(`se recibio ${data}`)
     if (!formSubmited){
       setFormSubmited(true);
     }else{
