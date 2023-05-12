@@ -1,9 +1,9 @@
 
 import { useRef, useState } from "react"
-import { checkName,checkLastName,checkDni,checkCarnetNumber, checkPhoneNumber, checkEmail, checkDayOfBirth, checkRp1,checkRp2,checkDiagnostic1,checkDiagnostic2 } from "./validators"
+import { checkName,checkLastName,checkDni,checkCarnetNumber, checkPhoneNumber, checkEmail, checkDayOfBirth} from "./validators"
 import Button from "./Button";
 
-export function FormBasico2({ receta=false, obraSocialSelected, formHandler}) {
+export function FormBasico3({ especialidadSelected=false, obraSocialSelected, formHandler}) {
   const nameRef = useRef()
   const lastNameRef = useRef()
   const dniRef = useRef()
@@ -11,11 +11,9 @@ export function FormBasico2({ receta=false, obraSocialSelected, formHandler}) {
   const phoneNumberRef = useRef()
   const carnetNumberRef = useRef()
   const dayOfBirthRef = useRef()
-  const rp1Ref = useRef()
-  const rp2Ref = useRef()
-  const diagnostic1Ref = useRef()
-  const diagnostic2Ref = useRef()
 
+
+  const [cantidadSesiones, setCantidadSesiones] = useState(0)
 
   const [nameErrors, setNameErrors] = useState([])
   const [lastNameErrors, setLastNameErrors] = useState([])
@@ -24,10 +22,8 @@ export function FormBasico2({ receta=false, obraSocialSelected, formHandler}) {
   const [phoneNumberErrors, setPhoneNumberErrors] = useState([])
   const [carnetNumberErrors, setCarnetNumberErrors] = useState([])
   const [dayOfBirthErrors, setDayOfBirthErrors] = useState([])
-  const [rp1Errors, setRp1Errors] = useState([])
-  const [rp2Errors, setRp2Errors] = useState([])
-  const [diagnostic1Errors, setDiagnostic1Errors] = useState([])
-  const [diagnostic2Errors, setDiagnostic2Errors] = useState([])
+
+
 
 
   const [isAfterFirstSubmit, setIsAfterFirstSubmit] = useState(false)
@@ -43,10 +39,8 @@ export function FormBasico2({ receta=false, obraSocialSelected, formHandler}) {
     const phoneNumberResults = checkPhoneNumber(phoneNumberRef.current.value)
     const carnetNumberResults = checkCarnetNumber(carnetNumberRef.current.value)
     const dayOfBirthResults = checkDayOfBirth(dayOfBirthRef.current.value)
-    const rp1Results = checkRp1(rp1Ref.current.value)
-    const rp2Results = checkRp2(rp2Ref.current.value)
-    const diagnostic1Results = checkDiagnostic1(diagnostic1Ref.current.value)
-    const diagnostic2Results = checkDiagnostic2(diagnostic2Ref.current.value)
+
+   
 
 
     setNameErrors(nameResults)
@@ -56,21 +50,16 @@ export function FormBasico2({ receta=false, obraSocialSelected, formHandler}) {
     setPhoneNumberErrors(phoneNumberResults)
     setCarnetNumberErrors(carnetNumberResults)
     setDayOfBirthErrors(dayOfBirthResults)
-    setRp1Errors(rp1Results)
-    setRp2Errors(rp2Results)
-    setDiagnostic1Errors(diagnostic1Results)
-    setDiagnostic2Errors(diagnostic2Results)
+
 
     if (nameResults.length === 0 && lastNameResults.length === 0 && dniResults.length === 0 && emailResults.length === 0 && phoneNumberResults.length === 0 &&
-      carnetNumberResults.length === 0 && dayOfBirthResults.length === 0 && rp1Results.length === 0 && rp2Results.length === 0 && diagnostic1Results.length === 0 && diagnostic2Results.length === 0) {
-      alert("Success")
+      carnetNumberResults.length === 0 && dayOfBirthResults.length === 0 ) {
+     
 
       formHandler({name: nameRef.current.value, lastName: lastNameRef.current.value, dni: dniRef.current.value,email: emailRef.current.value,phoneNumber: phoneNumberRef.current.value,
-         carnet: carnetNumberRef.current.value, dayOfBirth : dayOfBirthRef.current.value, rp1: rp1Ref.current.value, rp2: rp2Ref.current.value,diagnostic1: diagnostic1Ref.current.value,
-         diagnostic2:diagnostic2Ref.current.value})
+         carnet: carnetNumberRef.current.value, dayOfBirth : dayOfBirthRef.current.value})
     }
   }
-
 
   return (
     <div>
@@ -152,62 +141,12 @@ export function FormBasico2({ receta=false, obraSocialSelected, formHandler}) {
                 </div>
             </div>
           </div>
-          {receta && 
-            (
-              <>
-              
-              
-                <div className="grid md:grid-cols-2 md:gap-6">
-                    <div className="relative z-0 w-full mb-6 group">
-                      <div className={`form-group ${rp1Errors.length > 0 ? "error" : ""}`}>
-                          <input ref={rp1Ref} onChange={ isAfterFirstSubmit ? e => setRp1Errors(checkRp1(e.target.value)): undefined }  type="text" name="rp1" id="floating_company" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:dark:text-red-700 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "  />
-                          <label htmlFor="rp1" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Rp1 (Consultar al Doctor)</label>
-                          {rp1Errors.length > 0 && (
-                            <div className="msg">{rp1Errors.join(", ")}</div>
-                          )}
-                      </div>
-                    </div>
-                    <div className="relative z-0 w-full mb-6 group">
-                      <div className={`form-group ${diagnostic1Errors.length > 0 ? "error" : ""}`}>
-                          <input ref={diagnostic1Ref} onChange={ isAfterFirstSubmit ? e => setDiagnostic1Errors(checkDiagnostic1(e.target.value)): undefined } type="text" name="diagnostic1" id="floating_company" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:dark:text-red-700 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "  />
-                          <label htmlFor="diagnostic1" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Diagnostico 1</label>
-                          {diagnostic1Errors.length > 0 && (
-                            <div className="msg">{diagnostic1Errors.join(", ")}</div>
-                          )}
-                      </div>
-                    </div>
-                </div>                
-                
-                <div className="grid md:grid-cols-2 md:gap-6">
-                  <div className="relative z-0 w-full mb-6 group">
-                    <div className={`form-group ${rp2Errors.length > 0 ? "error" : ""}`}> 
-                      <input ref={rp2Ref} onChange={ isAfterFirstSubmit ? e => setRp2Errors(checkRp2(e.target.value)): undefined }  type="text" name="rp2" id="floating_company" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:dark:text-red-700 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "  />
-                      <label htmlFor="rp2" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Rp2 (Consultar al Doctor)</label>
-                      {rp2Errors.length > 0 && (
-                        <div className="msg">{rp2Errors.join(", ")}</div>
-                      )}
-                    </div>
-                  </div>
-                  <div className="relative z-0 w-full mb-6 group">
-                    <div className={`form-group ${diagnostic2Errors.length > 0 ? "error" : ""}`}>
-                      <input ref={diagnostic2Ref} onChange={ isAfterFirstSubmit ? e => setDiagnostic2Errors(checkDiagnostic2(e.target.value)): undefined } type="text" name="diagnostic2" id="floating_company" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:dark:text-red-700 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "  />
-                      <label htmlFor="diagnostic2" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Diagnostico 2</label>
-                      {diagnostic2Errors.length > 0 && (
-                        <div className="msg">{diagnostic2Errors.join(", ")}</div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              
-              </>
-           
-            )
-            
-          }
+
+        
           
           <div className="m-16 md:grid-cols-2 md:gap-6">
             <Button className="btn  " type="submit">
-              Ingresar Datos
+              Ingresar Datos para orden de {`${especialidadSelected} con ${obraSocialSelected}`}
             </Button>
           </div>
         </form>

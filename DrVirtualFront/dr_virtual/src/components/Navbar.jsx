@@ -9,8 +9,8 @@ import Hero from "./Hero";
 const Navbar = () => {
 
   return (
-    <nav className="w-full   z-50   navbar w-full  ">
-      <div className="bg-emerald-50 fixed    w-full ">
+    <nav className="w-full    navbar w-full  ">
+      <div className="bg-emerald-50     w-full ">
         <div className="sm:flex  hidden justify-evenly py-5  ml-[20px]"> 
           <img src={logo} alt="logo" className="w-[248px] h-[64px]  cursor-pointer " onClick={() => window.scrollTo({top: 0, left: 0, behavior: 'smooth'})}/>
         </div>
@@ -19,7 +19,7 @@ const Navbar = () => {
         </div>
       </div>
       <div>
-        <h2 className="text-center text-m pt-36 text-rose-800 w" >
+        <h2 className="text-center text-m pt-10 text-rose-800 w" >
           Estamos para ayudarte, selecciona el tipo de consulta que deseas realizar
         </h2>
       </div>
