@@ -31,9 +31,9 @@ export default function FormInterconsultaExtra({formInterconsultaHandler}) {
             <input className='m-4' type="radio" value="ONCOLOGIA" checked={selectedInterConsulta === "ONCOLOGIA"} onChange={handleChange} />
             ONCOLOGIA
           </label>
-          <label>
-            <input className='m-4' type="radio" value="OTORRINOLARINGOLOGIA" checked={selectedInterConsulta === "OTORRINOLARINGOLOGIA"} onChange={handleChange} />
-            OTORRINOLARINGOLOGIA
+          <label className='text-xs'>
+            <input className='m-4 ' type="radio" value="INFECTOLOGIA" checked={selectedInterConsulta === "INFECTOLOGIA"} onChange={handleChange} />
+            INFECTOLOGIA
           </label>
           <label>
             <input className='m-4' type="radio" value="NEUMOLOGIA" checked={selectedInterConsulta === "NEUMOLOGIA"} onChange={handleChange} />
@@ -53,7 +53,7 @@ export default function FormInterconsultaExtra({formInterconsultaHandler}) {
           </label>
           <label>
             <input className='m-4' type="radio" value="MEDICINA - LABORAL" checked={selectedInterConsulta === "MEDICINA - LABORAL"} onChange={handleChange} />
-            MEDICINA - LABORAL
+            MEDICINA LABORAL
           </label>
           <label>
             <input className='m-4' type="radio" value="PEDIATRIA" checked={selectedInterConsulta === "PEDIATRIA"} onChange={handleChange} />
@@ -65,7 +65,7 @@ export default function FormInterconsultaExtra({formInterconsultaHandler}) {
           </label>
           <label>
             <input className='m-4' type="radio" value="MEDICINA - LEGAL" checked={selectedInterConsulta === "MEDICINA - LEGAL"} onChange={handleChange} />
-            MEDICINA - LEGAL
+            MEDICINA LEGAL
           </label>
           <label>
             <input className='m-4' type="radio" value="GINECOLOGIA" checked={selectedInterConsulta === "GINECOLOGIA"} onChange={handleChange} />
@@ -108,8 +108,8 @@ export default function FormInterconsultaExtra({formInterconsultaHandler}) {
             DERMATOLOGIA
           </label>
           <label>
-            <input className='m-4' type="radio" value="INFECTOLOGIA" checked={selectedInterConsulta === "INFECTOLOGIA"} onChange={handleChange} />
-            INFECTOLOGIA
+            <input className='m-4' type="radio" value="OTORRINOLARINGOLOGIA" checked={selectedInterConsulta === "OTORRINOLARINGOLOGIA"} onChange={handleChange} />
+            OTORRINOLARINGOLOGIA
           </label>
 
         </div >
