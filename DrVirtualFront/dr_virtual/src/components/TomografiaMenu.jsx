@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from './Button'
+import {Button2} from './Button2'
 export default function TomografiaMenu({clickHandler}) {
   return (
     <div className=" w-full  ">
@@ -10,15 +10,15 @@ export default function TomografiaMenu({clickHandler}) {
       </div>
       <div className=" flex justify-around py-5 ">
         <div className="relative  w-[160px] h-12 group">
-          <Button clickHandler={()=>clickHandler("abdomen y pelvis")}>Tomografia A.C. de abdomen y pelvis</Button>
+          <Button2 clickHandler={()=>clickHandler("abdomen y pelvis")}>Tomografia A.C. de abdomen y pelvis</Button2>
         </div>
         <div className="relative  w-[160px] h-12 group">
-          <Button clickHandler={()=>clickHandler("craneo y columna")}>Tomografia A.C. de craneo y columna</Button>
+          <Button2 clickHandler={()=>clickHandler("craneo y columna")}>Tomografia A.C. de craneo y columna</Button2>
         </div>
       </div>
       <div className=" flex justify-around py-5 ">
         <div className="relative  w-[160px] h-12 group">
-          <Button clickHandler={()=>clickHandler("torax")}>Tomografia A.C. de torax</Button>
+          <Button2 clickHandler={()=>clickHandler("torax")}>Tomografia A.C. de torax</Button2>
         </div>
 
       </div>

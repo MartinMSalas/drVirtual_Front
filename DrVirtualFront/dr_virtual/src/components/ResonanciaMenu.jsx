@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from './Button'
+import {Button2} from './Button2'
 export default function ResonanciaMenu({clickHandler}) {
   return (
     <div className=" w-full  ">
@@ -10,15 +10,15 @@ export default function ResonanciaMenu({clickHandler}) {
       </div>
       <div className=" flex justify-around py-5 ">
         <div className="relative  w-[160px] h-12 group">
-          <Button clickHandler={()=>clickHandler("craneo")}>RNM de craneo, c. cervical y lumbar</Button>
+          <Button2 clickHandler={()=>clickHandler("craneo")}>RNM de craneo, c. cervical y lumbar</Button2>
         </div>
         <div className="relative  w-[160px] h-12 group">
-          <Button clickHandler={()=>clickHandler("torax y corazon")}>RNM de torax y corazon</Button>
+          <Button2 clickHandler={()=>clickHandler("torax y corazon")}>RNM de torax y corazon</Button2>
         </div>
       </div>
       <div className=" flex justify-around py-5 ">
         <div className="relative  w-[160px] h-12 group">
-          <Button clickHandler={()=>clickHandler("abdomen y pelvis")}>RNM de abdomen y pelvis</Button>
+          <Button2 clickHandler={()=>clickHandler("abdomen y pelvis")}>RNM de abdomen y pelvis</Button2>
         </div>
 
       </div>

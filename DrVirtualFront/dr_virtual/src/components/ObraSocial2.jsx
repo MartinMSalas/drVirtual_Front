@@ -1,5 +1,5 @@
 import  { useState } from "react";
-import Button from "./Button";
+import {Button2} from "./Button2";
 import FormBasico from "./FormBasico";
 
 
@@ -18,18 +18,18 @@ const ObraSocial = ({clickHandler}) => {
         </div>
         <div className=" flex justify-around py-5 ">
           <div className="relative  w-[160px] h-12 group">
-            <Button clickHandler={()=>clickHandler("OSEP")}>OSEP</Button>
+            <Button2 clickHandler={()=>clickHandler("OSEP")}>OSEP</Button2>
           </div>
           <div className="relative  w-[160px] h-12 group">
-            <Button clickHandler={()=>clickHandler("OSEP")}>OSEP</Button>
+            <Button2 clickHandler={()=>clickHandler("OSEP")}>OSEP</Button2>
           </div>
         </div>
         <div className=" flex justify-around py-5 ">
           <div className="relative  w-[160px] h-12 group">
-            <Button clickHandler={()=>clickHandler("OSEP")}>OSEP</Button>
+            <Button2 clickHandler={()=>clickHandler("OSEP")}>OSEP</Button2>
           </div>
           <div className="relative  w-[160px] h-12 group">
-            <Button clickHandler={()=>clickHandler("OSEP")}>OSEP</Button>
+            <Button2 clickHandler={()=>clickHandler("OSEP")}>OSEP</Button2>
           </div>
         </div>
       </div>

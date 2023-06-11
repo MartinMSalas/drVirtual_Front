@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from './Button'
+
 import {Button2} from './Button2'
 export default function Hero3Menu({clickHandler}) {
   return (
@@ -9,20 +9,20 @@ export default function Hero3Menu({clickHandler}) {
           <Button2 clickHandler={()=>clickHandler("recetas")} >Recetas</Button2>
         </div>
         <div className="relative  w-[160px] group">
-           <Button clickHandler={()=>clickHandler("prescripcion")} >Prescripcion</Button>
+           <Button2 clickHandler={()=>clickHandler("prescripcion")} >Prescripcion</Button2>
         </div> 
       </div>
       <div className=' flex justify-around py-5 '>
         <div className="relative  w-[160px] group">
-           <Button clickHandler={()=>clickHandler("laboratorio")} >Laboratorio</Button>
+           <Button2 clickHandler={()=>clickHandler("laboratorio")} >Laboratorio</Button2>
         </div> 
         <div className="relative  w-[160px] group">
-           <Button clickHandler={()=>clickHandler("consultas")} >Consultas</Button>
+           <Button2 clickHandler={()=>clickHandler("consultas")} >Consultas</Button2>
         </div>    
       </div>
       <div className=' flex justify-around py-5 '>
        <div className="relative  w-[160px] group">
-           <Button clickHandler={()=>clickHandler("imagenes")} >Imagenes Medicas</Button>
+           <Button2 clickHandler={()=>clickHandler("imagenes")} >Imagenes Medicas</Button2>
         </div> 
       </div>
     </div>

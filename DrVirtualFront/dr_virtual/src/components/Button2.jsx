@@ -5,7 +5,7 @@ export const  Button2 = ({children,clickHandler}) => {
     <div>
 
       <div className="w-full">    
-        <button onClick={clickHandler} className="button2 w-full h-12 bg-blue-400">{children}</button>
+        <button onClick={clickHandler} className="button2 w-full text-xs text- h-12 bg-blue-400">{children}</button>
       </div>
 
     </div>

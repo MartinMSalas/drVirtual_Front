@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from './Button'
+import {Button2} from './Button2'
 export default function EspecialidadEcografiaExtra ({clickHandler}) {
 
 
@@ -12,26 +12,26 @@ export default function EspecialidadEcografiaExtra ({clickHandler}) {
       </div>
       <div className=" flex justify-around py-5 ">
         <div className="relative  w-[160px] h-12 group">
-          <Button clickHandler={()=>clickHandler("articular")}>Ecografia Articular y de partes blandas</Button>
+          <Button2 clickHandler={()=>clickHandler("articular")}>Ecografia Articular y de partes blandas</Button2>
         </div>
         <div className="relative  w-[160px] h-12 group">
-          <Button clickHandler={()=>clickHandler("abdomen")}>Ecografia de Abdomen</Button>
-        </div>
-      </div>
-      <div className=" flex justify-around py-5 ">
-        <div className="relative  w-[160px] h-12 group">
-          <Button clickHandler={()=>clickHandler("genitales")}>Ecografia de Genitales y Obstetricia</Button>
-        </div>
-        <div className="relative  w-[160px] h-12 group">
-          <Button clickHandler={()=>clickHandler("glandulas")}>Ecografia de Glandulas</Button>
+          <Button2 clickHandler={()=>clickHandler("abdomen")}>Ecografia de Abdomen</Button2>
         </div>
       </div>
       <div className=" flex justify-around py-5 ">
         <div className="relative  w-[160px] h-12 group">
-          <Button clickHandler={()=>clickHandler("renal")}>Ecografia Renal</Button>
+          <Button2 clickHandler={()=>clickHandler("genitales")}>Ecografia de Genitales y Obstetricia</Button2>
         </div>
         <div className="relative  w-[160px] h-12 group">
-          <Button clickHandler={()=>clickHandler("venosa")}>Ecografia Venosa</Button>
+          <Button2 clickHandler={()=>clickHandler("glandulas")}>Ecografia de Glandulas</Button2>
+        </div>
+      </div>
+      <div className=" flex justify-around py-5 ">
+        <div className="relative  w-[160px] h-12 group">
+          <Button2 clickHandler={()=>clickHandler("renal")}>Ecografia Renal</Button2>
+        </div>
+        <div className="relative  w-[160px] h-12 group">
+          <Button2 clickHandler={()=>clickHandler("venosa")}>Ecografia Venosa</Button2>
         </div>
       </div>
     </div>

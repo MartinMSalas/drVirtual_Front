@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from './Button'
+import {Button2} from './Button2'
 export default function TomografiaCraneoMenu({clickHandler}) {
   return (
     <div className=" w-full  ">
@@ -10,18 +10,18 @@ export default function TomografiaCraneoMenu({clickHandler}) {
       </div>
       <div className=" flex justify-around py-5 ">
         <div className="relative  w-[160px] h-12 group">
-          <Button clickHandler={()=>clickHandler("craneo")}>Tomografia A.C. de craneo</Button>
+          <Button2 clickHandler={()=>clickHandler("craneo")}>Tomografia A.C. de craneo</Button2>
         </div>
         <div className="relative  w-[160px] h-12 group">
-          <Button clickHandler={()=>clickHandler("columna cervical")}>Tomografia A.C. de columna cervical</Button>
+          <Button2 clickHandler={()=>clickHandler("columna cervical")}>Tomografia A.C. de columna cervical</Button2>
         </div>
       </div>
       <div className=" flex justify-around py-5 ">
         <div className="relative  w-[160px] h-12 group">
-          <Button clickHandler={()=>clickHandler("columna dorsal")}>Tomografia A.C. de columna dorsal</Button>
+          <Button2 clickHandler={()=>clickHandler("columna dorsal")}>Tomografia A.C. de columna dorsal</Button2>
         </div>
         <div className="relative  w-[160px] h-12 group">
-          <Button clickHandler={()=>clickHandler("columna lumbro-sacra")}>Tomografia A.C. de columna lumbro-sacra</Button>
+          <Button2 clickHandler={()=>clickHandler("columna lumbro-sacra")}>Tomografia A.C. de col. lumbro-sacra</Button2>
         </div>
       </div>
 
